@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar" id="navbar">
+      <div class="logo">Miportafolio</div>
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#sobre-mi">Sobre Mí</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contactos">Contactos</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <h1>Hola, soy NOMBRE</h1>
+        <p>
+          Futuro Desarrollador Web Full Stack | Con el fin de crear experiencias
+          digitales increíbles
+        </p>
+        <a href="#proyectos" class="btn">Ver mis proyectos</a>
+      </div>
+    </section>
+
+    <section id="sobre-mi">
+      <div class="about-content">
+        <div class="about-text">
+          <h2 class="section-title">Sobre Mí</h2>
+          <h3>Desarrollador Apasionado</h3>
+          <p>
+            Soy un desarrollador web con experiencia en crear aplicaciones
+            modernas y funcionales. Me encanta transformar ideas en realidad
+            mediante código limpio y eficiente.
+          </p>
+          <p>
+            Siempre estoy aprendiendo nuevas tecnologías y mejorando mis
+            habilidades para ofrecer las mejores soluciones a los desafíos que
+            enfrento.
+          </p>
+        </div>
+        <div class="skills">
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>HTML/CSS</span>
+              <span>90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-progress="90"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>JavaScript</span>
+              <span>70%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-progress="70"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Java</span>
+              <span>10%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-progress="10"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Node.js</span>
+              <span>25%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-progress="25"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proyectos" style="background: #f8f9fa">
+      <div>
+        <h2 class="section-title">Mis Proyectos</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-img">🚀</div>
+            <div class="project-info">
+              <h3>E-Commerce App</h3>
+              <p>
+                Tienda online completa con carrito de compras y sistema de pagos
+                integrado.
+              </p>
+              <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">MongoDB</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-img">📱</div>
+            <div class="project-info">
+              <h3>App de Tareas</h3>
+              <p>
+                Aplicación de gestión de tareas con funciones de organización y
+                recordatorios.
+              </p>
+              <div class="project-tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">CSS</span>
+                <span class="tag">LocalStorage</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-img">🎨</div>
+            <div class="project-info">
+              <h3>Portfolio Creativo</h3>
+              <p>
+                Sitio web interactivo con animaciones y diseño responsive
+                moderno.
+              </p>
+              <div class="project-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="contact-content">
+        <h2 class="section-title">Contacto</h2>
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Enviar Mensaje</button>
+        </form>
+        <div class="social-links">
+          <a href="#" title="GitHub">💻</a>
+          <a href="#" title="LinkedIn">💼</a>
+          <a href="#" title="X">X</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 MiPortafolio. Todos los derechos reservados.</p>
+    </footer>
+  </body>
+  <script src="index.js"></script>
+</html>
