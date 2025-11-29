@@ -1,63 +1,39 @@
-// Navbar scroll effect
-window.addEventListener("scroll", () => {
-  const navbar = document.getElementById("navbar");
-  if (window.scrollY > 50) {
-    navbar.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
-  }
-});
+const body = document.body;
+const btn = document.getElementById("themeBtn");
 
-// Smooth scrolling
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
-    if (target) {
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  });
-});
+// 1. Revisar si hay un tema guardado
+const savedTheme = localStorage.getItem("theme");
 
-// Skill bars animation
-const observerOptions = {
-  threshold: 0.5,
-  rootMargin: "0px",
-};
-
-const skillObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      const skillBars = entry.target.querySelectorAll(".skill-progress");
-      skillBars.forEach((bar) => {
-        const progress = bar.getAttribute("data-progress");
-        bar.style.width = progress + "%";
-      });
-      skillObserver.unobserve(entry.target);
-    }
-  });
-}, observerOptions);
-
-const skillsSection = document.querySelector(".skills");
-if (skillsSection) {
-  skillObserver.observe(skillsSection);
+if (savedTheme) {
+  body.classList.toggle("dark", savedTheme === "dark");
+} else {
+  // 2. Si no hay nada guardado, usar el tema del sistema
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  if (prefersDark) body.classList.add("dark");
 }
 
-// Form submission
-document.getElementById("contactForm").addEventListener("submit", (e) => {
-  e.preventDefault();
-  alert("¡Gracias por tu mensaje! Te contactaré pronto.");
-  e.target.reset();
+// 3. Botón para cambiar el tema
+btn.addEventListener("click", () => {
+  body.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    body.classList.contains("dark") ? "dark" : "light"
+  );
 });
 
-// Project cards hover effect
-document.querySelectorAll(".project-card").forEach((card) => {
-  card.addEventListener("click", () => {
-    alert(
-      "Aquí podrías agregar un enlace al proyecto o abrir un modal con más detalles"
-    );
+/* ============================
+       ANIMACIONES AL SCROLL
+    ============================ */
+const reveals = document.querySelectorAll(".reveal");
+
+const revealScroll = () => {
+  const trigger = window.innerHeight * 0.85;
+
+  reveals.forEach((el) => {
+    const top = el.getBoundingClientRect().top;
+    if (top < trigger) el.classList.add("visible");
   });
-});
+};
+
+window.addEventListener("scroll", revealScroll);
+window.addEventListener("load", revealScroll);
